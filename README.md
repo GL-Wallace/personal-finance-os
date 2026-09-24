@@ -1,84 +1,115 @@
 # Personal Finance OS
 
-A reusable Agent Skill for wage-led capital accumulation, source-governed personal-finance reasoning, native-currency asset-ledger interpretation, and Bogle-first long-term discipline.
+Personal Finance OS is an Agent Skill for people in the **wage-led capital-accumulation stage**: employment income and human capital remain the primary wealth engine, while sustainable monthly surplus is gradually converted into long-term financial capital.
 
-## Governing idea
+Its purpose is not to build or continuously optimize an outstanding portfolio. It provides a disciplined way to understand financial facts, protect the income engine, accumulate capital, and reduce avoidable investment errors.
 
-Personal Finance OS serves a person whose main wealth engine is employment income and human capital. It protects resilience, converts sustainable surplus into long-term productive assets, and tracks the gradual transition toward financial-capital participation. John C. Bogle's body of work governs the philosophy, Bogleheads supplies the default implementation, and Buffett–Munger reasoning reduces errors only in bounded active capital.
+## Governing framework
 
-The Skill does not seek to construct or continuously optimize an outstanding portfolio.
+The system follows a clear decision hierarchy:
 
-## System layers
+1. **Financial facts first.** A complete asset ledger establishes what is known, what is missing, and what can be calculated without invention.
+2. **Life and solvency boundaries.** Legal obligations, essential spending, liquidity, and the continuity of the income engine take priority over return seeking.
+3. **Bogle as the foundation.** Low cost, broad diversification, long holding periods, disciplined saving, stewardship, and humility about forecasts govern the default path.
+4. **Bogleheads as implementation.** The philosophy is translated into simple, repeatable actions appropriate to the user's goals, jurisdiction, time horizon, and risk capacity.
+5. **Buffett–Munger as an active-investing exception.** Active capital must first be eligible for risk, then satisfy a higher burden of evidence. It never overrides the passive constitution or financial-safety boundaries.
 
-1. Philosophy constitution: life, legal obligations, solvency, and evidence quality set the boundaries.
-2. Capital accumulation: protect the income engine, create sustainable surplus, and continue long-term ownership.
-3. v0.7 ledger: five sheets separate rules, positions, economic-month saving, and actual investment events.
-4. Bogle/Bogleheads default: low costs, broad diversification, regular contributions, simplicity, and discipline.
-5. Active exception: source-governed Buffett–Munger error reduction after capital eligibility and passive comparison.
+Active investing is therefore an exception that must justify itself against the passive alternative—not a parallel default.
 
-## v0.7 workbook contract
+## What the Skill helps with
 
-| Sheet | Purpose |
+- Diagnose the user's capital-accumulation stage and dependence on employment income
+- Review income, living expenses, monthly saving, liquidity, and asset changes
+- Distinguish contributions, transfers, investment events, valuation changes, and genuine investment performance
+- Evaluate whether current financial behavior is sustainable and aligned with the purpose of wealth
+- Apply Bogle and Bogleheads principles to long-term investment decisions
+- Examine bounded active investments through source-governed Buffett–Munger reasoning
+- State uncertainty explicitly when liabilities, prices, exchange rates, transactions, or other material facts are missing
+- Produce a short, prioritized action list without manufacturing a reason to trade
+
+## Asset ledger
+
+The bundled workbook is a compact financial fact system rather than a transaction-level expense tracker.
+
+| Sheet | Role |
 |---|---|
-| `00 Dashboard` | Read-only native-currency position and latest close |
-| `01 Rules` | Personal constraints and active-investment exceptions |
-| `02 Balance Sheet` | Dated asset facts and local-currency values |
-| `03 Monthly History` | Economic-month income, expense, saving, native-currency snapshots, and close state |
-| `04 Investment Flow` | Actual buys, sells, FX, dividends, interest, and fees by event date |
+| `00 Dashboard` | Read-only summary of the latest available financial facts |
+| `01 Rules` | User-defined constraints and active-investment exceptions |
+| `02 Balance Sheet` | Dated positions and values in their native currencies |
+| `03 Monthly History` | Aggregated income, spending, saving, month-end assets, and close status |
+| `04 Investment Flow` | Material buys, sells, foreign-exchange events, dividends, interest, and fees |
 
-The workbook deliberately does not consolidate CNY, USD, and HKD. The Skill therefore does not invent a total net worth, cross-currency portfolio weight, market/FX plug, or performance attribution without an explicit dated FX basis.
+The workbook keeps CNY, USD, and HKD separate unless the user supplies an explicit dated exchange-rate basis. It does not invent consolidated net worth, portfolio weights, return attribution, or rebalancing signals.
 
-The workbook stores a user-defined monthly passive-contribution rule. The rule identifies its asset and currency in the label and its target amount in the value cell. A target is not evidence of execution: adherence comes only from matching `Passive Buy` events in `04 Investment Flow`, and variances remain visible rather than being backfilled.
+The monthly passive-contribution policy is user-defined. A target in `01 Rules` is not proof of execution; only matching `Passive Buy` events in `04 Investment Flow` establish what was actually invested.
 
-## What it does
+Copy `assets/finance-os-template.xlsx` before entering personal information. The bundled file must remain blank.
 
-- Validates the five-sheet v0.7 structure, source formulas, economic-month close states, and event semantics
-- Recomputes local-currency position values, CNY monthly saving, liquidity facts, and passive-policy adherence
-- Keeps salary attribution, FX conversion, and investment execution separate
-- Preserves uncertainty when liabilities, FX conversion bases, prices, or events are missing
-- Applies Bogle's wider body of work as the governing financial philosophy and Bogleheads as the implementation method
-- Supports a contribution-first policy without forcing target weights or rebalancing bands
-- Routes active assets to an exception workflow and separates capital eligibility, research, and implementation
-- Uses source-governed Buffett–Munger gates for individual companies without replacing the passive constitution
-- Provides a blank ledger template, deterministic validators, and synthetic fixtures; public examples contain no personal financial data
+## Boundaries
 
-## What it does not do
+Personal Finance OS does not:
 
-- Connect directly to banks or brokerages, execute trades, or move money
-- Treat a policy target as proof of a purchase
-- Add different currencies together without a dated conversion basis
-- Infer investment return from asset changes that also contain contributions and withdrawals
-- Promise returns, optimize continuously, or replace licensed financial, tax, accounting, or legal advice
+- Connect directly to banks or brokerages
+- Execute trades, move money, or authenticate to financial institutions
+- Treat market forecasts, recent returns, or product popularity as decision foundations
+- Promise returns or claim that a named investor would endorse a security
+- Replace licensed financial, tax, accounting, insurance, or legal advice
+- Publish or bundle a user's completed ledger or identifying financial data
 
 ## Intellectual foundation
 
-The Bogle layer synthesizes *Stay the Course*, *Common Sense on Mutual Funds*, *Enough*, *Clash of the Cultures*, *John Bogle on Investing*, *Don't Count On It!*, and *The Little Book of Common Sense Investing*. *The Bogleheads' Guide to Investing* supplies practical implementation. This project uses original summaries and is not affiliated with or endorsed by the authors, publishers, Vanguard, Bogleheads, Berkshire Hathaway, or related organizations.
+The Bogle layer is an original synthesis of:
 
-## Install and invoke
+- *Stay the Course*
+- *Common Sense on Mutual Funds*
+- *The Little Book of Common Sense Investing*
+- *Enough: True Measures of Money, Business, and Life*
+- *The Clash of the Cultures: Investment vs. Speculation*
+- *John Bogle on Investing: The First 50 Years*
+- *Don't Count On It!*
 
-Install the repository as an Agent Skills-compatible skill with `SKILL.md` as its entry point, then invoke:
+*The Bogleheads' Guide to Investing* supplies the practical implementation framework. The active-investing exception draws only from attributable Berkshire Hathaway materials, shareholder letters, meeting records, and other registered primary sources described in `references/source-registry.md`.
+
+This project uses original summaries. It is independent and is not affiliated with or endorsed by the authors, publishers, Vanguard, the Bogleheads organization, Berkshire Hathaway, or related entities.
+
+## Use
+
+Install the repository as an Agent Skills-compatible skill with `SKILL.md` as its entry point, then invoke it directly or through a matching personal-finance request.
 
 ```text
-$personal-finance-os Review my latest economic month, native-currency assets, liquidity, and execution of my Bogle-first accumulation policy.
+$personal-finance-os Review my latest month, financial resilience, capital-accumulation progress, and execution of my long-term policy.
 ```
 
-Automatic invocation remains enabled for matching personal-finance requests. Copy `assets/finance-os-template.xlsx` before entering personal data. See [examples/prompts.md](examples/prompts.md), [examples/philosophy-test-cases.md](examples/philosophy-test-cases.md), and [references/privacy-and-data-boundary.md](references/privacy-and-data-boundary.md). Never commit a completed ledger, private spreadsheet link, credentials, or identifying financial data.
+Useful starting points:
+
+- `assets/finance-os-template.xlsx` — blank five-sheet ledger
+- `examples/prompts.md` — example requests
+- `examples/philosophy-test-cases.md` — synthetic acceptance cases
+- `references/privacy-and-data-boundary.md` — public/private data boundary
+
+## Privacy and validation
+
+Real ledgers, private spreadsheet links, credentials, account identifiers, and identifying financial records must remain outside this repository. Public examples use synthetic data that is not derived by perturbing a real ledger.
+
+Before publishing a change, run:
+
+```bash
+python3 scripts/validate_skill.py
+python3 scripts/validate_fixture.py
+python3 scripts/validate_template.py
+python3 scripts/privacy_scan.py --current-tree
+python3 scripts/privacy_scan.py --git-history
+```
 
 ## Repository structure
 
-- `SKILL.md`: router, operating rules, and safety boundaries
-- `references/`: philosophy, ledger, implementation, and active-exception methods
-- `examples/`: synthetic prompts, fixtures, and acceptance cases
-- `assets/`: blank ledger template for private user copies
-- `scripts/`: deterministic Skill, fixture, and XLSX validation
-- `agents/openai.yaml`: client-facing metadata
-
-## Roadmap
-
-- v0.1-v0.4: philosophy constitution, active-exception gates, and prior ledger contracts
-- v0.7: native-currency five-sheet contract and policy-to-execution reconciliation
-- v1.0: stable interfaces and documented compatibility
+- `SKILL.md` — routing, operating rules, and safety boundaries
+- `references/` — philosophy, ledger, implementation, and active-exception methods
+- `examples/` — synthetic prompts, fixtures, and acceptance cases
+- `assets/` — blank ledger template
+- `scripts/` — deterministic validation and privacy checks
+- `agents/openai.yaml` — client-facing Skill metadata
 
 ## License and disclaimer
 
-[MIT](LICENSE). Educational workflow and general information only; users remain responsible for verifying inputs, outputs, laws, costs, risks, and suitability.
+[MIT](LICENSE). Educational workflow and general information only. Users remain responsible for verifying inputs, outputs, applicable laws, costs, risks, and suitability.
