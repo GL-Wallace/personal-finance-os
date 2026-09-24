@@ -1,0 +1,36 @@
+{
+  "notice": "All names, identifiers, dates, and amounts in this fixture are synthetic.",
+  "rules": {
+    "personal_constraints": {
+      "CNY Defensive Reserve Floor": 28750.0,
+      "Immediate CNY Cash Floor": 9250.0,
+      "Low-Risk CNY Reserve Guide": 19500.0,
+      "Monthly SYN-PASSIVE Contribution (USD)": 1234.0
+    },
+    "exceptions": [
+      {"asset": "Synthetic Sector Fund", "ticker": "SYN-SECTOR", "currency": "CNY", "maximum_weight": 0.1, "decision": "Pending Review"},
+      {"asset": "Synthetic Company A", "ticker": "SYN-A", "currency": "HKD", "maximum_weight": null, "decision": "Pending Review"}
+    ]
+  },
+  "balance_sheet": {
+    "snapshot_date": "2030-08-31",
+    "positions": [
+      {"ticker": "CASH-CNY", "currency": "CNY", "quantity": 1.0, "current_price": 36500.0, "current_value_local": 36500.0},
+      {"ticker": "SYN-BOND-CNY", "currency": "CNY", "quantity": 28750.0, "current_price": 1.0, "current_value_local": 28750.0},
+      {"ticker": "SYN-SECTOR", "currency": "CNY", "quantity": 13750.0, "current_price": 1.0, "current_value_local": 13750.0},
+      {"ticker": "SYN-PASSIVE.US", "currency": "USD", "quantity": 12.0, "current_price": 600.0, "current_value_local": 7200.0},
+      {"ticker": "SYN-BOND-USD", "currency": "USD", "quantity": 18.0, "current_price": 100.0, "current_value_local": 1800.0},
+      {"ticker": "SYN-A", "currency": "HKD", "quantity": 1500.0, "current_price": 8.0, "current_value_local": 12000.0},
+      {"ticker": "CASH-HKD", "currency": "HKD", "quantity": 1.0, "current_price": 6500.0, "current_value_local": 6500.0}
+    ]
+  },
+  "monthly_history": [
+    {"economic_month_end": "2032-03-31", "salary_cny": 18400.0, "other_earned_cny": 600.0, "living_expense_cny": 4200.0, "other_external_flow_cny": 0.0, "net_saving_cny": 14800.0, "cny_assets": 65000.0, "usd_assets": 8000.0, "hkd_assets": 17000.0, "close_status": "Closed"},
+    {"economic_month_end": "2032-04-30", "salary_cny": 19250.0, "other_earned_cny": 350.0, "living_expense_cny": 4600.0, "other_external_flow_cny": 0.0, "net_saving_cny": 15000.0, "cny_assets": 79000.0, "usd_assets": 9000.0, "hkd_assets": 18500.0, "close_status": "Closed"}
+  ],
+  "investment_flow": [
+    {"event_date": "2032-04-06", "action": "FX Buy", "asset": "Synthetic USD Purchase", "ticker": null, "currency": "USD", "amount_local": 1234.0, "quantity": null, "cny_paid_received": 8765.0},
+    {"event_date": "2032-04-15", "action": "Passive Buy", "asset": "Synthetic Broad-Market Fund", "ticker": "SYN-PASSIVE.US", "currency": "USD", "amount_local": 1210.0, "quantity": 2.0, "cny_paid_received": null},
+    {"event_date": "2032-04-30", "action": "Dividend", "asset": "Synthetic Bond Fund", "ticker": "SYN-BOND-USD", "currency": "USD", "amount_local": 4.4, "quantity": null, "cny_paid_received": null}
+  ]
+}

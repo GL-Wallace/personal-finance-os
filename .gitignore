@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+
+# Private financial data
+private/
+personal-data/
+exports/
+local-ledgers/
+*.private.xlsx
+*.private.csv
+*.private.json
+
+# Credentials
+.env
+.env.*
+credentials/
+secrets/
+service-account*.json
+*.pem
+*.key
+*.p12
+
+# Logs and temporary exports
+*.log
+*.tmp
+~$*.xlsx
+.DS_Store
+
+# Only the sanitized template may be tracked as a workbook.
+*.xlsx
+!assets/finance-os-template.xlsx

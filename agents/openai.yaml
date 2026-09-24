@@ -1,0 +1,7 @@
+interface:
+  display_name: "Personal Finance OS"
+  short_description: "Wage-led capital accumulation with Bogle discipline"
+  default_prompt: "Use $personal-finance-os to review my wage-led capital accumulation, protect resilience and human capital, reconcile economic-month saving with actual passive-policy execution, preserve native-currency boundaries, and recommend the smallest useful next action under a Bogle-first policy."
+
+policy:
+  allow_implicit_invocation: true
